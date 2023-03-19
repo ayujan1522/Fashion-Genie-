@@ -97,22 +97,20 @@ def recommend(features,feature_list):
 
     return indices
 
-# steps
-# file upload -> save
+
 uploaded_file = st.file_uploader("Choose an image")
 if uploaded_file is not None:
     if save_uploaded_file(uploaded_file):
-        # display the file
+       
         upload_title = '<p style="font-family:sans-serif; color:White; font-size: 30px;font-weight:bold;margin-bottom:20px">UPLOADED IMAGE</p>'
         st.markdown(upload_title, unsafe_allow_html=True)
         display_image = Image.open(uploaded_file)
         st.image(display_image,width=180)
-        # feature extract
+       
         features = feature_extraction(os.path.join("uploads",uploaded_file.name),model)
-        #st.text(features)
-        # recommendention
+        
         indices = recommend(features,feature_list)
-        # show
+       
 
         st.title("RECOMMENDATIONS")
         col1,col2,col3,col4,col5 = st.columns(5)
