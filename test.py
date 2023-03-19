@@ -34,5 +34,7 @@ print(indices)
 
 for file in indices[0]:
     print(filenames[file])
+    
+    
 
 
