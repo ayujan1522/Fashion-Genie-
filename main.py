@@ -30,7 +30,7 @@ st.markdown(head_title, unsafe_allow_html=True)
 sub_title = '<p style="font-family:sans-serif; color:White; font-size: 20px; text-align:center;">Genie For Your Fashion</p>'
 st.markdown(sub_title, unsafe_allow_html=True)
 
-#option menu
+
 selected=option_menu(
     menu_title=None,
     options=["SEARCH"],
@@ -43,7 +43,7 @@ selected=option_menu(
 
 
 
-#gif
+
 st.markdown("")
 def load_lottieurl(url):
     r=requests.get(url)
@@ -56,7 +56,7 @@ st_lottie(lottie_coding,height=290,key="coding",)
 
 
 
-#search photos
+
 feature_list = np.array(pickle.load(open('embeddings.pkl','rb')))
 filenames = pickle.load(open('filenames.pkl','rb'))
 
